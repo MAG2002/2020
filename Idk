@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+import course.course;
+
+public class Driver {
+	int n;
+	Scanner input = new Scanner(System.in);
+	System.out.println("Enter number of courses: ");
+	n = input.nextInt();
+	while (!(n <=6 && n >=1)) {
+		System.out.println("Amount entered is invalid, please re-renter number of courses: ");
+		n = input.nextInt();
+	}
+	//create an array
+	course [] OOF= new course [n];
+	Scanner in2 = new Scanner(System.in);
+	Scanner in3 = new Scanner(System.in);
+	
+	String c;
+	int g;
+	
+	for(int i =0; i<n-1; i++) {
+		System.out.println("Enter name of course");
+		c=in2.nextLine();
+		System.out.println("Enter the mark of:"+c);
+		g=in3.nextInt();
+		
+		OOF[i]=new course(c,g);
+}
+	int avg = 0;
+	for (int i1 = 0;i<=n-1;i++) {
+		avg +=OOF [i].mark;
+	}
+	avg= avg/n;
+	if( avg<50) {
+		System.out.println("you failed your average was:"+ avg);
+	}
+	else if (avg>80) {
+		System.out.println("Pass,your average was:"+avg);
+	}
+	else {
+		System.out.println("Passed,your average was:"+avg);
+	}
+		
+	}
+}
